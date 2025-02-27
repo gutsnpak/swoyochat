@@ -32,7 +32,7 @@ constructor(private chatService: ChatService, protected authService: AuthService
       }
 
       this.chatService.messages$.subscribe((messages: { user: string; text: string; time: string }[]) => {
-        this.messages = messages.slice(); // Присваиваем полный массив, а не добавляем
+        this.messages = messages.slice();
       });
     }
 

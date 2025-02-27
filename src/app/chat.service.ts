@@ -23,12 +23,11 @@ export class ChatService {
       this.messagesSubject.next(message);
     };
 
-    // Создаём Observable для messages
     this.messages$ = this.messagesSubject.asObservable().pipe(
   scan(
     (acc: { user: string; text: string; time: string }[], val: { user: string; text: string; time: string }) =>
       [...acc, val],
-    [] as { user: string; text: string; time: string }[] // Явно указываем тип начального значения
+    [] as { user: string; text: string; time: string }[]
   )
 );
 
