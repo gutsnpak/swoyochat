@@ -10,7 +10,7 @@ export class ChatService {
   private channel: BroadcastChannel;
   private messagesSubject: Subject<{ user: string; text: string; time: string }> = new Subject();
   private messagesArray: { user: string; text: string; time: string }[] = [];
-  public messages$: Observable<{ user: string; text: string; time: string }[]>; // Обратите внимание на $
+  public messages$: Observable<{ user: string; text: string; time: string }[]>;
 
   private alive = true;
   private saveSubscription: Subscription;
